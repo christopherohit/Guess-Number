@@ -45,8 +45,6 @@ def input():
 def Auto_Find_By_Binary_Search(): # Computer auto generate this issues and you check result
     minimum = int(input("Please enter the lowest number to guess: "))
     maximum = int(input("Please enter the highest number to guess: "))
-    k = math.log(maximum - minimum + 1 , 2)
-    x = rd.randint(minimum , maximum)
     if minimum > maximum:
         return True
     mid = (maximum + minimum) // 2
@@ -62,4 +60,19 @@ def Auto_Find_By_Binary_Search(): # Computer auto generate this issues and you c
         print("Your number which you has created in your mind greater than " , mid , "?" , end= " ")
         user = input()
         print(user)
+        if user == "Y" or user == "y":
+            return Auto_Find_By_Binary_Search(mid + 1 , maximum)
+        elif user == "N" or user == "n":
+            return Auto_Find_By_Binary_Search(minimum , mid - 1)
+        else:
+            print("Invalid input. You just select 'Y'/'N'")
+            return Auto_Find_By_Binary_Search(minimum , maximum)
+    else:
+        print("Invalid Input. Print 'Y'/'N'")
+        return Auto_Find_By_Binary_Search(minimum , maximum)
+
+def Auto_Find_Automatic(): #This different with Component above that the seft will auto generate number and will be
+    # guess this and don't have any action from human 
+     
+    
     

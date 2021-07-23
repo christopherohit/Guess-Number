@@ -26,9 +26,13 @@ def Menu():
         if Select == "2":
             Game.Create_Hard_Mode()
         if Select == "3":
-            Game.Auto_Find_By_Binary_Search()
+            minimum = int(input("Please enter the lowest number to guess: "))
+            maximum = int(input("Please enter the highest number to guess: "))
+            Game.Auto_Find_By_Binary_Search(minimum , maximum)
         if Select == "4":
-            Game.Auto_Find_Automatic()
+            minimum = int(input("Please enter the lowest number to guess: "))
+            maximum = int(input("Please enter the highest number to guess: "))
+            Game.Auto_Find_Automatic(minimum , maximum)
         if Select == "5":
             break
     print("\nGoodBye !!!!!!!")

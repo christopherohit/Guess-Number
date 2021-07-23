@@ -74,6 +74,7 @@ def Anou( k , x):
     
     while count < k:
         count += 1
+
         guess = int(input("Please fill in your guess number: "))
 
         if x == guess:
@@ -104,14 +105,12 @@ def Create_Hard_Mode():
 args = ["N" , "N" , "Y"]
 index = -1
 
-def input():
+def inputs():
     global index, args;
     index += 1 
     return args[index]
 
-def Auto_Find_By_Binary_Search(): # Computer auto generate this issues and you check result
-    minimum = int(input("Please enter the lowest number to guess: "))
-    maximum = int(input("Please enter the highest number to guess: "))
+def Auto_Find_By_Binary_Search(minimum , maximum): # Computer auto generate this issues and you check result
     if minimum > maximum:
         return True
     mid = (maximum + minimum) // 2
@@ -138,18 +137,17 @@ def Auto_Find_By_Binary_Search(): # Computer auto generate this issues and you c
         print("Invalid Input. Print 'Y'/'N'")
         return Auto_Find_By_Binary_Search(minimum , maximum)
 
-def Auto_Find_Automatic(): #This different with Component above that the seft will auto generate number and will be
+def Auto_Find_Automatic(minimun , maximum): #This different with Component above that the seft will auto generate number and will be
     # guess this and don't have any action from human
     while True:
-        minimun = int(input("Please fill in a minimun number: "))
-        maximum = int(input("Please fill in maximum number: "))
         Coun = math.log(maximum - minimun + 1 , 2)
         if minimun > maximum:
             return True
         mid = (maximum + minimun) // 2
         x = rd.randint(minimun, maximum)
         if mid == x :
-            print("Computer has use " , round(Coun) , " to guess number")
+            print("The number secret is " , x)
+            print("Computer has use " , round(Coun) , "chance to guess number")
             time.sleep(1)
             print("Do you want to see Binary Search Level (y/n) ?")
             See = input()

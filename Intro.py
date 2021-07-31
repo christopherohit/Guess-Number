@@ -3,20 +3,20 @@ import Menu
 
 def Intro():
     while True:
-        print("\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("\n~        //===   __  __   ____   ___   ___       || ====        ~")
-        print("\n~        || ===  ||  ||   ||__   ||__  ||__      ||  ||         ~")
-        print("\n~        ||  ||  ||  ||   ||        ||    ||     ||  ||         ~")
-        print("\n~         \\\_||  \\\__//   ||__    __||  __||     ||  ||         ~")
-        print("\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ")
+        print(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("~        //===   __  __   ____   ___   ___       || ====        ~")
+        print("~        || ===  ||  ||   ||__   ||__  ||__      ||  ||         ~")
+        print("~        ||  ||  ||  ||   ||        ||    ||     ||  ||         ~")
+        print("~         \\\_||  \\\__//   ||__    __||  __||     ||  ||         ~")
+        print(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ")
 
         print("\n About this game:")
-        print("\nAfter a stressful and tiring working time, you need to rest")
+        print("After a stressful and tiring working time, you need to rest")
         print("because you are too tired but can't sleep because of")
         print("the stress in your body. So you need to find a form of entertainment")
         print("that helps you relieve stress, focus your mind and develop your predictive ability.")
         print("Well this is the game created to help you in that. Briefly about the game:")
-        print("\nThe game includes many different modes with increasing levels and the ability")
+        print("The game includes many different modes with increasing levels and the ability")
         print("to solve problems also decreases, but the rules of play are unchanged.")
         print("Specifically, you will have n turns corresponding to the difficulty you have chosen and")
         print("with your super brain you can deploy levels of algorithms to solve the given problem")
@@ -33,3 +33,14 @@ def Intro():
             Menu.Menu()
         elif Agreed == "N" or Agreed == "n":
             sys.exit()
+
+def Continue():
+    print ("Do you want continue game ? (y/n)")
+    select = input()
+    if select == "y" or select == "Y":
+        return Menu.Menu()
+    elif select == "n" or select == "N":
+        return -1
+    else:
+        print ("Invalid answer")
+        return Continue()

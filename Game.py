@@ -85,7 +85,7 @@ def Anou( k , x):
             print("Your guess number too small!")
         elif x < guess:
             print("Your guess number too large!")
-    if count >= k:
+    if count > k:
         print("The number is %d" % x)
         print("Hope you are better lucky in next time !")
         print("See you")
@@ -93,13 +93,13 @@ def Anou( k , x):
 def create_Medium_Mode():
     k = math.log(1000 - 1 + 1 , 2)
     x = rd.randint(1 , 1000)
-    print("\n\tYou've only ", round(k), " chances to guess number x!\n")
+    print("\n\tYou've only ", round(k), " chances to guess number x which random from 1 to 1000!\n")
     Anou(k , x)
 
 def Create_Hard_Mode():
     x = rd.randint(0 , 5000)
     k = math.log(5000 - 0 + 1 , 2)
-    print("\n\tYou've only ", round(k), " chances to guess number x!\n")
+    print("\n\tYou've only ", round(k), " chances to guess number x which random from 0 to 5000!\n")
     Anou(k ,x)
 
 args = ["N" , "N" , "Y"]
